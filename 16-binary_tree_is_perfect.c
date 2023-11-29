@@ -17,7 +17,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	if (tree == NULL)
 		return (0);
-	
+
 	return (_recursive_perfect(tree, _depth_node(_leaf_return(tree)), 0));
 }
 
