@@ -6,9 +6,10 @@
  */
 void binary_tree_delete(binary_tree_t *tree)
 {
-	if (tree == NULL) {
+	if (tree == NULL) 
+	{
 		return; /*Nothing to delete*/
-    }
+	}
 
 	/*Delete left and right subtrees recursively */
 	binary_tree_delete(tree->left);
