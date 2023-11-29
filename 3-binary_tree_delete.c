@@ -11,8 +11,8 @@ void binary_tree_delete(binary_tree_t *tree)
     }
 
 	/*Delete left and right subtrees recursively */
-	delete_binary_tree(tree->left);
-	delete_binary_tree(tree->right);
+	binary_tree_delete(tree->left);
+	binary_tree_delete(tree->right);
 
 	/*Delete a specific node*/
 	free(tree);
