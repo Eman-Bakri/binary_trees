@@ -32,10 +32,18 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 		_push_print(hd->node, hd, &tl, func);
 		_queue_pop(&hd);
 	}
+	
+	/* To free the binary tree nodes*/
+	while ((binary_tree_t *)tree != NULL)
+	{
+		binary_tree_t *temp = (binary_tree_t *)tree;
+		tree = tree->left;
+		free(temp);
+	}
 }
 
 /**
- * pop - Pops the queue head.
+ * _queue_pop - Pops the queue head.
  * @head: Pointer to the queue head.
  */
 void _queue_pop(levelorder_queue_t **head)
@@ -120,4 +128,3 @@ void _queue_free(levelorder_queue_t *head)
 		head = spc;
 	}
 }
-
