@@ -32,14 +32,6 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 		_push_print(hd->node, hd, &tl, func);
 		_queue_pop(&hd);
 	}
-	
-	/* To free the binary tree nodes*/
-	while ((binary_tree_t *)tree != NULL)
-	{
-		binary_tree_t *temp = (binary_tree_t *)tree;
-		tree = tree->left;
-		free(temp);
-	}
 }
 
 /**
