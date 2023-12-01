@@ -43,7 +43,7 @@ int _ifavl(const binary_tree_t *tree, int min_node, int max_node)
 		subst = _lefthg > _righthg ? _lefthg - _righthg : _righthg - _lefthg;
 		if (subst > 1)
 			return (0);
-		
+
 		return (_ifavl(tree->left, min_node, tree->n - 1) &&
 			_ifavl(tree->right, tree->n + 1, max_node));
 	}
@@ -70,3 +70,4 @@ size_t _calc_height(const binary_tree_t *tree)
 	}
 	return (0);
 }
+
